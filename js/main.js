@@ -1,78 +1,118 @@
 /* ==========================================
-   ACTIVE NAV LINK ON SCROLL
+   HORIZONTAL SLIDE NAVIGATION
 ========================================== */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const wrapper       = document.getElementById('slides');
+const slideEls      = [...wrapper.querySelectorAll(':scope > section')];
+const total         = slideEls.length;
+let current         = 0;
+let locked          = false;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => {
-          link.classList.toggle(
-            'is-active',
-            link.getAttribute('href') === `#${entry.target.id}`
-          );
-        });
-      }
-    });
-  },
-  { rootMargin: '-40% 0px -55% 0px' }
-);
+/* Vídeos controlados por slide */
+const manifesto_video = document.querySelector('#manifesto .manifesto-bg-video');
+const pergunta_video  = document.querySelector('#pergunta .pergunta-bg-video');
 
-sections.forEach((section) => observer.observe(section));
+const slideVideos = [
+  { index: 1, el: manifesto_video },
+  { index: 2, el: pergunta_video },
+];
 
-/* ==========================================
-   HEADER SHADOW ON SCROLL
-========================================== */
-const header = document.querySelector('.site-header');
+function handleSlideVideos(index) {
+  slideVideos.forEach(({ index: targetIndex, el }) => {
+    if (!el) return;
+    if (index === targetIndex) {
+      el.currentTime = 0;
+      el.play();
+    } else {
+      el.pause();
+      el.currentTime = 0;
+    }
+  });
+}
 
-window.addEventListener('scroll', () => {
-  header.classList.toggle('is-scrolled', window.scrollY > 10);
+const dotsContainer = document.querySelector('.slide-dots');
+const counterEl     = document.querySelector('.slide-counter');
+const prevBtn       = document.querySelector('.slide-btn--prev');
+const nextBtn       = document.querySelector('.slide-btn--next');
+
+/* Build dots */
+const dots = slideEls.map((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+  dot.setAttribute('aria-label', `Slide ${i + 1} de ${total}`);
+  dot.setAttribute('role', 'tab');
+  dot.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(dot);
+  return dot;
+});
+
+function goTo(index) {
+  if (index < 0 || index >= total || index === current || locked) return;
+  locked = true;
+  current = index;
+  wrapper.style.setProperty('--slide-index', current);
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  counterEl.textContent =
+    `${String(current + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+  handleSlideVideos(current);
+  handleSlideMosaics(current);
+  setTimeout(() => { locked = false; }, 820);
+}
+
+/* Buttons */
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+
+/* data-goto-slide attributes (CTA buttons) */
+document.querySelectorAll('[data-goto-slide]').forEach(btn => {
+  btn.addEventListener('click', () => goTo(parseInt(btn.dataset.gotoSlide, 10)));
+});
+
+/* Keyboard */
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  { e.preventDefault(); goTo(current + 1); }
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    { e.preventDefault(); goTo(current - 1); }
+});
+
+/* Mouse wheel (throttled) */
+let lastWheel = 0;
+window.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const now = Date.now();
+  if (now - lastWheel < 900) return;
+  lastWheel = now;
+  if (e.deltaY > 0 || e.deltaX > 0) goTo(current + 1);
+  else                               goTo(current - 1);
+}, { passive: false });
+
+/* Touch swipe */
+let touchStartX = 0, touchStartY = 0;
+window.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+window.addEventListener('touchend', (e) => {
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+    goTo(dx < 0 ? current + 1 : current - 1);
+  }
 }, { passive: true });
 
 /* ==========================================
-   FADE-IN ON SCROLL (INTERSECTION OBSERVER)
+   SHAPE GRID — Slide 04 (capa-tese)
 ========================================== */
-const fadeEls = document.querySelectorAll(
-  '.pilar-card, .step-card, .tool-card, .tese-card, .ref-row'
-);
-
-const fadeObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-
-fadeEls.forEach((el) => {
-  el.classList.add('fade-up');
-  fadeObserver.observe(el);
-});
-
-/* ==========================================
-   HIGHLIGHT ANIMATION TRIGGER
-========================================== */
-const highlightEls = document.querySelectorAll('.highlight-anim');
-
-const highlightObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        highlightObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.6 }
-);
-
-highlightEls.forEach((el) => highlightObserver.observe(el));
+const shapeCanvas = document.querySelector('.capa-shape-grid');
+if (shapeCanvas) {
+  new ShapeGrid(shapeCanvas, {
+    direction:        'diagonal',
+    speed:            0.4,
+    squareSize:       52,
+    borderColor:      '#1c1c1e',
+    hoverFillColor:   '#FF4C29',
+    hoverTrailAmount: 6,
+  });
+}
 
 /* ==========================================
    SPOTLIGHT HOVER (tese cards)
@@ -84,3 +124,22 @@ document.querySelectorAll('.tese-card').forEach((card) => {
     card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
   });
 });
+
+/* ==========================================
+   MOSAIC GRID — Slide pilares (index 5)
+========================================== */
+let pilaresMosaic = null;
+
+function handleSlideMosaics(index) {
+  if (!pilaresMosaic) return;
+  if (index === 5) {
+    pilaresMosaic.play();
+  } else {
+    pilaresMosaic.reset();
+  }
+}
+
+const mosaicEl = document.querySelector('#pilares .pilares-mosaic');
+if (mosaicEl && typeof gsap !== 'undefined') {
+  pilaresMosaic = new MosaicGrid(mosaicEl);
+}

@@ -530,76 +530,91 @@ a { color: inherit; }
 /* ==========================================
    PILARES
 ========================================== */
-.pilares-intro {
-  font-size: 15px;
-  line-height: 1.7;
-  color: rgba(255,255,255,.6);
-  max-width: 600px;
-  margin-bottom: var(--sp-xl);
-}
-.pilares-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-xxl);
-  align-items: stretch;
-}
-.pilares-image {
+#pilares {
+  padding: 0 !important;
+  display: block !important;
   position: relative;
-  display: flex;
-  min-height: 480px;
+  background:
+    url('../Public/Dobra_06.png') center right / contain no-repeat,
+    var(--charcoal);
 }
-.pilares-image::after {
+
+#pilares::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top,  var(--charcoal) 0%, transparent 38%),
-    linear-gradient(to right, var(--charcoal) 0%, transparent 14%),
-    linear-gradient(to left,  var(--charcoal) 0%, transparent 14%);
+  background: rgba(0, 0, 0, .68);
+  z-index: 0;
   pointer-events: none;
-  border-radius: var(--r-card);
 }
-.pilares-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: var(--r-card);
+
+.pilares-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
 }
+
+.pilares-content-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-xl) clamp(100px, 22vw, 320px);
+  overflow-y: auto;
+}
+
+.pilares-bg-side {
+  display: none;
+}
+
+.pilares-intro {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.7;
+  color: rgba(255,255,255,.6);
+  margin-bottom: var(--sp-lg);
+  max-width: 680px;
+  text-wrap: balance;
+}
+
 .pilares-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-md);
+  width: 100%;
+  max-width: 680px;
 }
+
 .pilar-card {
-  padding: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  padding: var(--sp-lg);
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
   border-radius: var(--r-card);
-  transition: background .3s, border-color .3s, transform .3s;
+  transition: background .3s, border-color .3s;
 }
 .pilar-card:hover {
   background: rgba(255,255,255,.09);
   border-color: rgba(255,76,41,.5);
-  transform: translateY(-3px);
 }
 .pilar-num {
   font-family: var(--f-head);
-  font-size: 40px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--coral);
-  opacity: .28;
+  opacity: .7;
   line-height: 1;
-  margin-bottom: var(--sp-sm);
 }
 .pilar-card h3 {
   font-family: var(--f-head);
-  font-size: 17px;
+  font-size: clamp(15px, 1.5vw, 19px);
   font-weight: 700;
   color: var(--white);
-  margin-bottom: var(--sp-sm);
 }
-.pilar-card p { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.55); }
+.pilar-card p { font-size: clamp(14px, 1.3vw, 17px); line-height: 1.65; color: rgba(255,255,255,.6); text-wrap: pretty; }
 
 /* ==========================================
    REFERÊNCIAS
@@ -933,4 +948,372 @@ footer {
 
   .ref-row  { display: grid; grid-template-columns: 210px 1fr; }
   .ref-vert { border-radius: 0; }
+}
+
+/* ==========================================
+   SLIDE CAPA (capítulo)
+========================================== */
+#capa-tese { position: relative; }
+
+.capa-shape-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.capa-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--sp-xl) var(--sp-xxl);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.capa-titulo {
+  font-family: var(--f-head);
+  font-size: clamp(48px, 8vw, 120px);
+  font-weight: 800;
+  line-height: 1.0;
+  color: var(--white);
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   SLIDE PERGUNTA — SPLIT LAYOUT COM VÍDEO
+========================================== */
+#pergunta {
+  background: #efefed;
+  padding: 0;
+  display: block !important;
+}
+
+.pergunta-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+.pergunta-split__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-xl) 10vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.pergunta-split__video {
+  position: relative;
+  overflow: hidden;
+  background: #efefed;
+}
+
+.pergunta-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+   SLIDE PERGUNTA
+========================================== */
+.pergunta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: var(--sp-xl);
+  position: relative;
+}
+
+.pergunta-ornamento {
+  font-family: var(--f-head);
+  font-size: clamp(160px, 25vw, 320px);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--coral);
+  opacity: .07;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
+.pergunta-titulo {
+  font-family: var(--f-head);
+  font-size: clamp(48px, 7.5vw, 120px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--charcoal);
+  letter-spacing: -.04em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   HORIZONTAL SLIDES — FULL SCREEN PPT MODE
+========================================== */
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slides-wrapper {
+  display: flex;
+  height: 100vh;
+  --slide-index: 0;
+  transform: translateX(calc(var(--slide-index) * -100vw));
+  transition: transform .75s cubic-bezier(.77, 0, .175, 1);
+  will-change: transform;
+}
+
+/* Each slide */
+.slides-wrapper > section {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Center content vertically on content slides */
+.slides-wrapper > section.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: var(--sp-xl);
+}
+
+/* Manifesto background video */
+#manifesto {
+  position: relative;
+}
+
+.manifesto-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#manifesto .container {
+  position: relative;
+  z-index: 2;
+  margin-inline: 0;
+  padding-inline-start: clamp(100px, 22vw, 320px);
+  padding-inline-end: var(--sp-md);
+}
+
+#manifesto .manifesto-layout {
+  grid-template-columns: 1fr;
+}
+
+.manifesto-text {
+  max-width: 540px;
+}
+
+.manifesto-h2 > span:first-child {
+  white-space: nowrap;
+}
+
+#manifesto .manifesto-layout {
+  grid-template-columns: 1fr !important;
+}
+
+#manifesto .manifesto-h2 {
+  font-family: var(--f-head);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--sp-xl);
+  white-space: nowrap;
+}
+
+.manifesto-h2-line1 { color: var(--coral); }
+#manifesto .manifesto-body p {
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.7;
+}
+#manifesto .quote-card blockquote {
+  font-size: clamp(18px, 2.2vw, 26px) !important;
+}
+
+/* Hero overrides */
+.slides-wrapper > #hero {
+  display: block;
+  min-height: unset;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* ==========================================
+   SLIDE OVERLAY (logo + controls)
+========================================== */
+
+.slide-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slide-top {
+  padding: 20px 24px;
+}
+
+.slide-logo {
+  display: inline-block;
+  font-family: var(--f-head);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: rgba(255, 255, 255, .92);
+  background: rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+}
+
+.slide-logo span { color: var(--coral); }
+
+.slide-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 28px;
+  pointer-events: none;
+  opacity: .18;
+  transition: opacity .35s ease;
+}
+
+.slide-bottom:hover {
+  opacity: 1;
+}
+
+.slide-btn {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .16);
+  color: rgba(255, 255, 255, .9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  line-height: 1;
+  transition: background .2s, border-color .2s, transform .2s;
+  flex-shrink: 0;
+}
+
+.slide-btn:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  transform: scale(1.1);
+}
+
+.slide-nav-pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, .28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: var(--r-pill);
+  padding: 8px 16px;
+}
+
+.slide-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.slide-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .35);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  transition: background .3s, width .3s;
+  flex-shrink: 0;
+}
+
+.slide-dot.active {
+  background: var(--coral);
+  width: 20px;
+}
+
+.slide-counter {
+  font-family: var(--f-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: rgba(255, 255, 255, .5);
+  white-space: nowrap;
+}
+
+/* ==========================================
+   SLIDE FOOTER (inside CTA slide)
+========================================== */
+
+.slide-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-md);
+  text-align: center;
+  padding: var(--sp-xl) var(--sp-md);
+  margin-top: var(--sp-xxl);
+  border-top: 1px solid var(--border);
+}
+
+.slide-footer .footer-logo {
+  font-family: var(--f-head);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--charcoal);
+}
+
+.slide-footer .footer-logo span { color: var(--coral); }
+
+.slide-footer .footer-copy {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
 }

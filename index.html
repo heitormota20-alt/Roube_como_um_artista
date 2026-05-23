@@ -12,450 +12,399 @@
 </head>
 <body>
 
-  <!-- ================================================
-       HEADER
-  ================================================ -->
-  <header class="site-header" role="banner">
-    <nav class="container nav" aria-label="Navegação principal">
-      <ul class="nav-links" role="list">
-        <li><a href="#manifesto">Manifesto</a></li>
-        <li><a href="#pilares">Pilares</a></li>
-        <li><a href="#metodo">Método</a></li>
-        <li><a href="#ferramentas">Ferramentas</a></li>
-        <li><a href="#json">JSON</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Slide overlay: logo + controls -->
+  <div class="slide-overlay" aria-hidden="true">
+    <div class="slide-top">
+      <span class="slide-logo">ROUBE<span>.</span>COMO<span>.</span>UM<span>.</span>ARTISTA</span>
+    </div>
+    <div class="slide-bottom">
+      <button class="slide-btn slide-btn--prev" aria-label="Slide anterior">&#8592;</button>
+      <div class="slide-nav-pill">
+        <div class="slide-dots" role="tablist" aria-label="Navegação de slides"></div>
+        <span class="slide-counter">01 / 09</span>
+      </div>
+      <button class="slide-btn slide-btn--next" aria-label="Próximo slide">&#8594;</button>
+    </div>
+  </div>
 
   <main>
+    <div class="slides-wrapper" id="slides">
 
-    <!-- ================================================
-         HERO
-    ================================================ -->
-    <section id="hero" aria-labelledby="hero-h1">
-      <video class="hero-video" autoplay loop muted playsinline aria-hidden="true">
-        <source src="Public/magnific_video-upscale_fFARm9ICDY.mp4" type="video/mp4">
-      </video>
-      <div class="container hero-inner">
-<h1 class="hero-title" id="hero-h1">
-          <span class="accent">COMO UM</span> <span class="title-box">ARTISTA</span>
-        </h1>
-
-        <h3 class="hero-desc">
-          Como mapear referências com inteligência artificial, hackear o design
-          contemporâneo de forma autêntica e fugir das cópias rasas.
-        </h3>
-
-      </div>
-    </section>
-
-    <!-- TICKER 1 -->
-    <div class="ticker" aria-hidden="true" role="presentation">
-      <div class="ticker-track">
-        <span class="ticker-item">Remix Criativo <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Repertório <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Roube como um Artista <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Design de Vanguarda <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Inteligência Artificial <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Criação Ativa <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Curadoria Estratégica <span class="ticker-star">✦</span></span>
-        <!-- duplicate for seamless loop -->
-        <span class="ticker-item">Remix Criativo <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Repertório <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Roube como um Artista <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Design de Vanguarda <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Inteligência Artificial <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Criação Ativa <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Curadoria Estratégica <span class="ticker-star">✦</span></span>
-      </div>
-    </div>
-
-    <!-- ================================================
-         MANIFESTO
-    ================================================ -->
-    <section id="manifesto" class="section section--light" aria-labelledby="manifesto-h2">
-      <div class="container manifesto-layout">
-
-        <div class="manifesto-text">
-          <span class="sec-label">O Manifesto de Kleon</span>
-          <h2 class="manifesto-h2" id="manifesto-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
-            <span style="color:var(--coral)">A quebra do mito</span><br>do gênio solitário.
-          </h2>
-
-          <div class="manifesto-body">
-            <p>
-              Em 2012, o livro <strong>'Steal Like an Artist'</strong> de Austin Kleon revolucionou o
-              ecossistema criativo. A grande tese de Kleon reside na libertação do criador:
-              <span class="highlight-anim">nenhuma ideia nasce pura.</span>
-            </p>
-            <p>
-              Toda grande peça de design ou código de vanguarda é o produto de <span class="highlight-anim">combinar
-              influências pré-existentes passadas pela sua própria lente de experiências.</span>
-            </p>
-
-            <div class="quote-card">
-              <span class="quote-mark" aria-hidden="true">"</span>
-              <blockquote>
-                "Colecione boas ideias. Quanto mais ideias você colecionar,
-                mais influências terá."
-              </blockquote>
-              <cite>— Austin Kleon</cite>
-            </div>
-          </div>
-
+      <!-- SLIDE 1: HERO -->
+      <section id="hero" aria-labelledby="hero-h1">
+        <video class="hero-video" autoplay loop muted playsinline aria-hidden="true">
+          <source src="Public/magnific_video-upscale_fFARm9ICDY.mp4" type="video/mp4">
+        </video>
+        <div class="container hero-inner">
+          <h1 class="hero-title" id="hero-h1">
+            <span class="accent">COMO UM</span> <span class="title-box">ARTISTA</span>
+          </h1>
+          <h3 class="hero-desc">
+            Como mapear referências com inteligência artificial, hackear o design
+            contemporâneo de forma autêntica e fugir das cópias rasas.
+          </h3>
         </div>
+      </section>
 
-        <div class="manifesto-image">
-          <img src="Public/Dobra_02.png" alt="Ilustração Dobra 02">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================
-         TESE: BOM vs MAU LADRÃO
-    ================================================ -->
-    <section id="tese" class="section section--white" aria-labelledby="tese-h2">
-      <div class="container">
-        <span class="sec-label">O Dilema dos Copiadores</span>
-        <h2 id="tese-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
-          O bom roubo artístico.
-        </h2>
-
-        <div class="tese-grid">
-          <article class="tese-card tese-card--good" aria-label="Conceito: O Bom Ladrão">
-            <div class="tese-card-content">
-              <div class="tese-card-header">
-                <div class="tese-icon" aria-hidden="true">✓</div>
-                <span class="tese-chip">O Bom Ladrão</span>
-              </div>
-              <h3>Remix &amp; Homenagem</h3>
-              <ul class="tese-list">
-                <li>Estuda o porquê da estrutura funcionar em vez de copiar apenas a superfície.</li>
-                <li>Mescla dezenas de referências concorrentes e analógicas de uma só vez.</li>
-                <li>Adiciona sua assinatura autoral, bagagem e desafios de mercado na entrega.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="tese-card tese-card--bad" aria-label="Conceito: O Mau Ladrão">
-            <div class="tese-card-content">
-              <div class="tese-card-header">
-                <div class="tese-icon" aria-hidden="true">✗</div>
-                <span class="tese-chip">O Mau Ladrão</span>
-              </div>
-              <h3>Plágio Superficial</h3>
-              <ul class="tese-list">
-                <li>Copia uma única imagem ou template de forma literal.</li>
-                <li>Oculta a fonte ou finge ser o criador original.</li>
-                <li>Rouba apenas a parte bonita (cosmética) sem entender a usabilidade ou conceito estratégico.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <figure class="tese-quote" role="figure" aria-label="Citação de destaque — Austin Kleon">
-          <blockquote>
-            "Se você se libertar do peso de tentar ser inteiramente original, poderá
-            finalmente abraçar a influência ao invés de fugir dela."
-          </blockquote>
-          <figcaption><cite>— Austin Kleon</cite></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ================================================
-         PILARES
-    ================================================ -->
-    <section id="pilares" class="section section--dark" aria-labelledby="pilares-h2">
-      <div class="container pilares-layout">
-
-        <div class="pilares-text">
-          <span class="sec-label">O que coletar estrategicamente</span>
-          <h2 id="pilares-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;color:var(--white);margin-bottom:var(--sp-md);">
-            Não copie a decoração. <span style="color:var(--coral)">Estude o esqueleto.</span>
-          </h2>
-          <p class="pilares-intro">
-            No mercado contemporâneo, a estética pura envelhece em meses. O que mantém um
-            design robusto e gerador de valor são os seus pilares fundamentais, suas
-            lógicas de layout, fluxos e tom de conversão.
-          </p>
-
-          <div class="pilares-grid">
-            <article class="pilar-card">
-              <div class="pilar-num" aria-hidden="true">01</div>
-              <h3>Grid &amp; Layout</h3>
-              <p>"Como os blocos de conteúdo se comportam horizontal e verticalmente."</p>
-            </article>
-            <article class="pilar-card">
-              <div class="pilar-num" aria-hidden="true">02</div>
-              <h3>Escalas de Contraste</h3>
-              <p>"Diferenciação de hierarquia visual e espaçamento de margens."</p>
-            </article>
-            <article class="pilar-card">
-              <div class="pilar-num" aria-hidden="true">03</div>
-              <h3>Persuasão &amp; Ritmo</h3>
-              <p>"A cadência textual que orienta o olho do usuário até o CTA."</p>
-            </article>
-            <article class="pilar-card">
-              <div class="pilar-num" aria-hidden="true">04</div>
-              <h3>Usabilidade Lógica</h3>
-              <p>"Entender o 'porquê' conceitual de cada botão ou elemento interativo."</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="pilares-image">
-          <img src="Public/Dobra_04.png" alt="Ilustração Dobra 04">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TICKER 2 (reverse) -->
-    <div class="ticker" aria-hidden="true" role="presentation">
-      <div class="ticker-track ticker-track--rev">
-        <span class="ticker-item">Grid &amp; Layout <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Escalas de Contraste <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Persuasão &amp; Ritmo <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Usabilidade Lógica <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Estude o Esqueleto <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Neo-Brutalismo <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Grid &amp; Layout <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Escalas de Contraste <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Persuasão &amp; Ritmo <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Usabilidade Lógica <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Estude o Esqueleto <span class="ticker-star">✦</span></span>
-        <span class="ticker-item">Neo-Brutalismo <span class="ticker-star">✦</span></span>
-      </div>
-    </div>
-
-    <!-- ================================================
-         REFERÊNCIAS
-    ================================================ -->
-    <section id="referencias" class="section section--light" aria-labelledby="ref-h2">
-      <div class="container">
-        <span class="sec-label">Bibliotecas de Curadoria</span>
-        <h2 id="ref-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;">
-          Onde buscar seu repertório.
-        </h2>
-
-        <div class="ref-table" role="region" aria-label="Tabela comparativa de fontes">
-
-          <div class="ref-row">
-            <div class="ref-vert">
-              <p class="ref-vert-label">Vertical</p>
-              <h3>Design &amp; Layout</h3>
-            </div>
-            <div class="ref-cols">
-              <div class="ref-col ref-col--rich">
-                <p class="ref-col-label">Fontes Ricas</p>
-                <p>Are.na, Behance Premium, Dribbble Nichado, Editorias e Livros Físicos.</p>
-              </div>
-              <div class="ref-col ref-col--poor">
-                <p class="ref-col-label">Fontes Pobres</p>
-                <p>Scroll casual sem foco no Pinterest, feeds inflados do Instagram.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="ref-row">
-            <div class="ref-vert">
-              <p class="ref-vert-label">Vertical</p>
-              <h3>Estratégia de Texto (Copy)</h3>
-            </div>
-            <div class="ref-cols">
-              <div class="ref-col ref-col--rich">
-                <p class="ref-col-label">Fontes Ricas</p>
-                <p>Newsletters de autores respeitados, Ensaios acadêmicos, Jornalismo narrativo.</p>
-              </div>
-              <div class="ref-col ref-col--poor">
-                <p class="ref-col-label">Fontes Pobres</p>
-                <p>Feed inundado de posts reciclados por algoritmos no LinkedIn.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="ref-row">
-            <div class="ref-vert">
-              <p class="ref-vert-label">Vertical</p>
-              <h3>Estratégias de Tráfego</h3>
-            </div>
-            <div class="ref-cols">
-              <div class="ref-col ref-col--rich">
-                <p class="ref-col-label">Fontes Ricas</p>
-                <p>Biblioteca de Anúncios da Meta, Repositórios de cases e prêmios de Ads.</p>
-              </div>
-              <div class="ref-col ref-col--poor">
-                <p class="ref-col-label">Fontes Pobres</p>
-                <p>Gurus rápidos vendendo hacks prontos e fórmulas mágicas no TikTok.</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <h3 style="font-family:var(--f-head);font-size:clamp(18px,2vw,22px);font-weight:700;margin-top:var(--sp-xxl);margin-bottom:var(--sp-lg);">
-          Metodologia de Intenção
-        </h3>
-        <div class="metodo-grid">
-          <div class="metodo-card metodo-card--ativo">
-            <p class="metodo-chip">Ativo</p>
-            <h3>Busca com Intenção</h3>
-            <p>"Definir de antemão qual estrutura está buscando (ex: 'grid de 3 colunas para SaaS') e fazer varreduras profundas em ferramentas de nicho. Você domina a pesquisa."</p>
-          </div>
-          <div class="metodo-card metodo-card--passivo">
-            <p class="metodo-chip">Passivo</p>
-            <h3>Consumo de Algoritmo</h3>
-            <p>"Fazer scroll infinito nas redes sem meta ou objetivo e deixar que a inteligência artificial defina qual repertório estético deve preencher seu cérebro."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         MÉTODO DO REMIX
-    ================================================ -->
-    <section id="metodo" class="section section--dark" aria-labelledby="metodo-h2">
-      <div class="container">
-        <span class="sec-label">Fluxo Prático</span>
-        <h2 id="metodo-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;color:var(--white);">
-          O fluxo sistemático do Remix.
-        </h2>
-
-        <div class="steps-grid" role="list" aria-label="Os 4 passos do método">
-
-          <article class="step-card" role="listitem">
-            <div class="step-card-top">
-              <div class="step-icon" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2v13M8 11l4 4 4-4"/><rect x="3" y="18" width="18" height="3" rx="1"/>
-                </svg>
-              </div>
-              <span class="step-badge" aria-label="Passo 1">01</span>
-            </div>
-            <h3 class="step-title">Coletar</h3>
-            <p class="step-desc">Busque pelo menos 3 fontes radicalmente distintas para resolver o mesmo problema técnico de layout ou narrativa.</p>
-          </article>
-
-          <article class="step-card" role="listitem">
-            <div class="step-card-top">
-              <div class="step-icon" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
-                  <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
-                  <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-                </svg>
-              </div>
-              <span class="step-badge" aria-label="Passo 2">02</span>
-            </div>
-            <h3 class="step-title">Desmontar</h3>
-            <p class="step-desc">Isole as partes. Separe o esqueleto de grids, a paleta de cores dominante e o tom de conversão de cada uma delas.</p>
-          </article>
-
-          <article class="step-card" role="listitem">
-            <div class="step-card-top">
-              <div class="step-icon" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
-                  <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
-                  <line x1="4" y1="4" x2="9" y2="9"/>
-                </svg>
-              </div>
-              <span class="step-badge" aria-label="Passo 3">03</span>
-            </div>
-            <h3 class="step-title">Recombinar</h3>
-            <p class="step-desc">Monte o quebra-cabeça. Una o grid da Referência A, com a paleta de cores da Referência B e os textos da Referência C.</p>
-          </article>
-
-          <article class="step-card" role="listitem">
-            <div class="step-card-top">
-              <div class="step-icon" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
-                </svg>
-              </div>
-              <span class="step-badge" aria-label="Passo 4">04</span>
-            </div>
-            <h3 class="step-title">Assinar</h3>
-            <p class="step-desc">Adicione você. Aplique o tom de voz do seu cliente, sua bagagem cultural e as particularidades do projeto final.</p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         FERRAMENTAS
-    ================================================ -->
-    <section id="ferramentas" class="section section--light" aria-labelledby="ferramentas-h2">
-      <div class="container">
-        <span class="sec-label">Nosso Arsenal</span>
-        <h2 id="ferramentas-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
-          O ecossistema digital do caçador.
-        </h2>
-
-        <div class="tools-grid">
-          <article class="tool-card">
-            <p class="tool-num">Ferramenta 01</p>
-            <h3>Meta Ads Library</h3>
-            <p>A maior ferramenta para compreender o que está de fato convertendo no ar no momento. Analise o que perdura ativo.</p>
-          </article>
-          <article class="tool-card">
-            <p class="tool-num">Ferramenta 02</p>
-            <h3>Pinterest Mapeado</h3>
-            <p>Excelente para capturar e categorizar moodboards por padrões específicos (ex: paletas ou assimetrias tipográficas).</p>
-          </article>
-          <article class="tool-card">
-            <p class="tool-num">Ferramenta 03</p>
-            <h3>Behance, Mobbin &amp; Are.na</h3>
-            <p>Onde o design de vanguarda mundial se consolida. Analise portfólios, layouts assíncronos e diagramações premiadas.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         JSON
-    ================================================ -->
-    <section id="json" class="section section--dark" aria-labelledby="json-h2">
-      <div class="container">
-        <div class="json-grid">
-
-          <div>
-            <span class="sec-label">O Hack do Futuro</span>
-            <h2 class="json-title" id="json-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;">
-              Mapeando Estilos em JSON para IA.
+      <!-- SLIDE 2: MANIFESTO -->
+      <section id="manifesto" class="section section--light" aria-labelledby="manifesto-h2">
+        <video class="manifesto-bg-video" muted playsinline aria-hidden="true">
+          <source src="Public/Dobra_02.mp4?v=2" type="video/mp4">
+        </video>
+        <div class="container manifesto-layout">
+          <div class="manifesto-text">
+            <span class="sec-label">O Manifesto de Kleon</span>
+            <h2 class="manifesto-h2" id="manifesto-h2">
+              <span class="manifesto-h2-line1">A quebra do mito</span><br>do gênio solitário.
             </h2>
-            <p class="json-desc">
-              Em vez de dar instruções vagas ao ChatGPT ou Claude ('faça um site bonito'),
-              nós convertemos referências estéticas reais em um arquivo JSON parametrizado.
-            </p>
-            <p class="json-desc">
-              Desta forma, a inteligência artificial entende exatamente os parâmetros de grid,
-              escalas tipográficas e paletas que você deseja recombinar, eliminando as
-              alucinações e respostas genéricas.
-            </p>
+            <div class="manifesto-body">
+              <p>
+                Em 2012, o livro <strong>'Steal Like an Artist'</strong> de Austin Kleon revolucionou o
+                ecossistema criativo. A grande tese de Kleon reside na libertação do criador:
+                <span class="highlight-anim">nenhuma ideia nasce pura.</span>
+              </p>
+              <p>
+                Toda grande peça de design ou código de vanguarda é o produto de <span class="highlight-anim">combinar
+                influências pré-existentes passadas pela sua própria lente de experiências.</span>
+              </p>
+              <div class="quote-card">
+                <span class="quote-mark" aria-hidden="true">"</span>
+                <blockquote>
+                  "Colecione boas ideias. Quanto mais ideias você colecionar,
+                  mais influências terá."
+                </blockquote>
+                <cite>— Austin Kleon</cite>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <ol class="json-steps" aria-label="Os 3 passos da ação">
-              <li class="json-step">
-                <span class="json-step-num" aria-label="Ação 1">1</span>
-                <span class="json-step-text">Tire um print da referência.</span>
-              </li>
-              <li class="json-step">
-                <span class="json-step-num" aria-label="Ação 2">2</span>
-                <span class="json-step-text">Suba na IA de visão e peça a desconstrução técnica.</span>
-              </li>
-              <li class="json-step">
-                <span class="json-step-num" aria-label="Ação 3">3</span>
-                <span class="json-step-text">Cole o resultado em formato JSON no seu construtor de prompts.</span>
-              </li>
-            </ol>
+      <!-- SLIDE 3: PERGUNTA -->
+      <section id="pergunta" class="section" aria-labelledby="pergunta-h2">
+        <div class="pergunta-split">
+
+          <!-- Esquerda: texto -->
+          <div class="pergunta-split__content">
+            <h2 class="pergunta-titulo" id="pergunta-h2">
+              E você já conhecia<br><span style="color:var(--coral)">essa obra?</span>
+            </h2>
           </div>
 
-          <div>
-            <div class="code-block" role="region" aria-label="Exemplo prático de Bloco JSON">
-              <pre aria-label="Template de output JSON"><span class="cp">{</span>
+          <!-- Direita: vídeo -->
+          <div class="pergunta-split__video">
+            <video class="pergunta-bg-video" muted playsinline aria-hidden="true">
+              <source src="Public/Dobra_03.mp4?v=1" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 4: CAPA TESE -->
+      <section id="capa-tese" class="section section--dark" aria-labelledby="capa-tese-h2">
+        <canvas class="capa-shape-grid" aria-hidden="true"></canvas>
+        <div class="capa-inner">
+          <h2 class="capa-titulo" id="capa-tese-h2">
+            Você sabe o que é<br>um <span style="color:var(--coral)">bom roubo</span><br>artístico?
+          </h2>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: TESE -->
+      <section id="tese" class="section section--white" aria-labelledby="tese-h2">
+        <div class="container">
+          <span class="sec-label">O Dilema dos Copiadores</span>
+          <h2 id="tese-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
+            O bom roubo artístico.
+          </h2>
+          <div class="tese-grid">
+            <article class="tese-card tese-card--good" aria-label="Conceito: O Bom Ladrão">
+              <div class="tese-card-content">
+                <div class="tese-card-header">
+                  <div class="tese-icon" aria-hidden="true">✓</div>
+                  <span class="tese-chip">O Bom Ladrão</span>
+                </div>
+                <h3>Remix &amp; Homenagem</h3>
+                <ul class="tese-list">
+                  <li>Estuda o porquê da estrutura funcionar em vez de copiar apenas a superfície.</li>
+                  <li>Mescla dezenas de referências concorrentes e analógicas de uma só vez.</li>
+                  <li>Adiciona sua assinatura autoral, bagagem e desafios de mercado na entrega.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="tese-card tese-card--bad" aria-label="Conceito: O Mau Ladrão">
+              <div class="tese-card-content">
+                <div class="tese-card-header">
+                  <div class="tese-icon" aria-hidden="true">✗</div>
+                  <span class="tese-chip">O Mau Ladrão</span>
+                </div>
+                <h3>Plágio Superficial</h3>
+                <ul class="tese-list">
+                  <li>Copia uma única imagem ou template de forma literal.</li>
+                  <li>Oculta a fonte ou finge ser o criador original.</li>
+                  <li>Rouba apenas a parte bonita (cosmética) sem entender a usabilidade ou conceito estratégico.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <figure class="tese-quote" role="figure" aria-label="Citação de destaque — Austin Kleon">
+            <blockquote>
+              "Se você se libertar do peso de tentar ser inteiramente original, poderá
+              finalmente abraçar a influência ao invés de fugir dela."
+            </blockquote>
+            <figcaption><cite>— Austin Kleon</cite></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: PILARES -->
+      <section id="pilares" class="section section--dark" aria-labelledby="pilares-h2">
+        <div class="pilares-split">
+
+          <!-- Esquerda: conteúdo -->
+          <div class="pilares-content-side">
+            <span class="sec-label">O que coletar estrategicamente</span>
+            <h2 id="pilares-h2" style="font-family:var(--f-head);font-size:clamp(40px,5.5vw,72px);font-weight:700;line-height:1.05;color:var(--white);margin-bottom:var(--sp-md);">
+              Não copie a decoração.<br><span style="color:var(--coral);white-space:nowrap">Estude o esqueleto.</span>
+            </h2>
+            <p class="pilares-intro">
+              No mercado contemporâneo, a estética pura envelhece em meses. O que mantém um
+              design robusto e gerador de valor são os seus pilares fundamentais, suas
+              lógicas de layout, fluxos e tom de conversão.
+            </p>
+            <div class="pilares-grid">
+              <article class="pilar-card">
+                <div class="pilar-num" aria-hidden="true">01</div>
+                <h3>Roube Grids e Layout</h3>
+                <p>Identifique padrões que tendem a performar melhor, busque referências de diversos layouts e adapte para a sua realidade.</p>
+              </article>
+              <article class="pilar-card">
+                <div class="pilar-num" aria-hidden="true">02</div>
+                <h3>Roube Conceitos</h3>
+                <p>Busque referências de composição, iluminação e estilos fotográficos que conversem com o público do seu cliente.</p>
+              </article>
+              <article class="pilar-card">
+                <div class="pilar-num" aria-hidden="true">03</div>
+                <h3>Roube Métodos</h3>
+                <p>Estude como grandes empresas estruturam seus projetos e aprimore para a sua área de atuação.</p>
+              </article>
+              <article class="pilar-card">
+                <div class="pilar-num" aria-hidden="true">04</div>
+                <h3>Roube Fora da Sua Área</h3>
+                <p>Pesquise no cinema clássico, nas aulas de história, em revistas. Absolutamente em tudo.</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Direita: imagem de fundo -->
+          <div class="pilares-bg-side"></div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 5: REFERÊNCIAS -->
+      <section id="referencias" class="section section--light" aria-labelledby="ref-h2">
+        <div class="container">
+          <span class="sec-label">Bibliotecas de Curadoria</span>
+          <h2 id="ref-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;">
+            Metodologia de Intenção
+          </h2>
+          <div class="metodo-grid">
+            <div class="metodo-card metodo-card--ativo">
+              <p class="metodo-chip">Ativo</p>
+              <h3>Busca com Intenção</h3>
+              <p>"Definir de antemão qual estrutura está buscando (ex: 'grid de 3 colunas para SaaS') e fazer varreduras profundas em ferramentas de nicho. Você domina a pesquisa."</p>
+            </div>
+            <div class="metodo-card metodo-card--passivo">
+              <p class="metodo-chip">Passivo</p>
+              <h3>Consumo de Algoritmo</h3>
+              <p>"Fazer scroll infinito nas redes sem meta ou objetivo e deixar que a inteligência artificial defina qual repertório estético deve preencher seu cérebro."</p>
+            </div>
+          </div>
+          <h3 style="font-family:var(--f-head);font-size:clamp(18px,2vw,22px);font-weight:700;margin-top:var(--sp-xxl);margin-bottom:var(--sp-lg);">
+            Onde buscar seu repertório.
+          </h3>
+          <div class="ref-table" role="region" aria-label="Tabela comparativa de fontes">
+            <div class="ref-row">
+              <div class="ref-vert">
+                <p class="ref-vert-label">Vertical</p>
+                <h3>Design &amp; Layout</h3>
+              </div>
+              <div class="ref-cols">
+                <div class="ref-col ref-col--rich">
+                  <p class="ref-col-label">Fontes Ricas</p>
+                  <p>Are.na, Behance Premium, Dribbble Nichado, Editorias e Livros Físicos.</p>
+                </div>
+                <div class="ref-col ref-col--poor">
+                  <p class="ref-col-label">Fontes Pobres</p>
+                  <p>Scroll casual sem foco no Pinterest, feeds inflados do Instagram.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ref-row">
+              <div class="ref-vert">
+                <p class="ref-vert-label">Vertical</p>
+                <h3>Estratégia de Texto (Copy)</h3>
+              </div>
+              <div class="ref-cols">
+                <div class="ref-col ref-col--rich">
+                  <p class="ref-col-label">Fontes Ricas</p>
+                  <p>Newsletters de autores respeitados, Ensaios acadêmicos, Jornalismo narrativo.</p>
+                </div>
+                <div class="ref-col ref-col--poor">
+                  <p class="ref-col-label">Fontes Pobres</p>
+                  <p>Feed inundado de posts reciclados por algoritmos no LinkedIn.</p>
+                </div>
+              </div>
+            </div>
+            <div class="ref-row">
+              <div class="ref-vert">
+                <p class="ref-vert-label">Vertical</p>
+                <h3>Estratégias de Tráfego</h3>
+              </div>
+              <div class="ref-cols">
+                <div class="ref-col ref-col--rich">
+                  <p class="ref-col-label">Fontes Ricas</p>
+                  <p>Biblioteca de Anúncios da Meta, Repositórios de cases e prêmios de Ads.</p>
+                </div>
+                <div class="ref-col ref-col--poor">
+                  <p class="ref-col-label">Fontes Pobres</p>
+                  <p>Gurus rápidos vendendo hacks prontos e fórmulas mágicas no TikTok.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: MÉTODO -->
+      <section id="metodo" class="section section--dark" aria-labelledby="metodo-h2">
+        <div class="container">
+          <span class="sec-label">Fluxo Prático</span>
+          <h2 id="metodo-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;color:var(--white);">
+            O fluxo sistemático do Remix.
+          </h2>
+          <div class="steps-grid" role="list" aria-label="Os 4 passos do método">
+            <article class="step-card" role="listitem">
+              <div class="step-card-top">
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v13M8 11l4 4 4-4"/><rect x="3" y="18" width="18" height="3" rx="1"/>
+                  </svg>
+                </div>
+                <span class="step-badge" aria-label="Passo 1">01</span>
+              </div>
+              <h3 class="step-title">Coletar</h3>
+              <p class="step-desc">Busque pelo menos 3 fontes radicalmente distintas para resolver o mesmo problema técnico de layout ou narrativa.</p>
+            </article>
+            <article class="step-card" role="listitem">
+              <div class="step-card-top">
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+                    <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+                    <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+                  </svg>
+                </div>
+                <span class="step-badge" aria-label="Passo 2">02</span>
+              </div>
+              <h3 class="step-title">Desmontar</h3>
+              <p class="step-desc">Isole as partes. Separe o esqueleto de grids, a paleta de cores dominante e o tom de conversão de cada uma delas.</p>
+            </article>
+            <article class="step-card" role="listitem">
+              <div class="step-card-top">
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
+                    <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+                    <line x1="4" y1="4" x2="9" y2="9"/>
+                  </svg>
+                </div>
+                <span class="step-badge" aria-label="Passo 3">03</span>
+              </div>
+              <h3 class="step-title">Recombinar</h3>
+              <p class="step-desc">Monte o quebra-cabeça. Una o grid da Referência A, com a paleta de cores da Referência B e os textos da Referência C.</p>
+            </article>
+            <article class="step-card" role="listitem">
+              <div class="step-card-top">
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+                  </svg>
+                </div>
+                <span class="step-badge" aria-label="Passo 4">04</span>
+              </div>
+              <h3 class="step-title">Assinar</h3>
+              <p class="step-desc">Adicione você. Aplique o tom de voz do seu cliente, sua bagagem cultural e as particularidades do projeto final.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: FERRAMENTAS -->
+      <section id="ferramentas" class="section section--light" aria-labelledby="ferramentas-h2">
+        <div class="container">
+          <span class="sec-label">Nosso Arsenal</span>
+          <h2 id="ferramentas-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
+            O ecossistema digital do caçador.
+          </h2>
+          <div class="tools-grid">
+            <article class="tool-card">
+              <p class="tool-num">Ferramenta 01</p>
+              <h3>Meta Ads Library</h3>
+              <p>A maior ferramenta para compreender o que está de fato convertendo no ar no momento. Analise o que perdura ativo.</p>
+            </article>
+            <article class="tool-card">
+              <p class="tool-num">Ferramenta 02</p>
+              <h3>Pinterest Mapeado</h3>
+              <p>Excelente para capturar e categorizar moodboards por padrões específicos (ex: paletas ou assimetrias tipográficas).</p>
+            </article>
+            <article class="tool-card">
+              <p class="tool-num">Ferramenta 03</p>
+              <h3>Behance, Mobbin &amp; Are.na</h3>
+              <p>Onde o design de vanguarda mundial se consolida. Analise portfólios, layouts assíncronos e diagramações premiadas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: JSON -->
+      <section id="json" class="section section--dark" aria-labelledby="json-h2">
+        <div class="container">
+          <div class="json-grid">
+            <div>
+              <span class="sec-label">O Hack do Futuro</span>
+              <h2 class="json-title" id="json-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;">
+                Mapeando Estilos em JSON para IA.
+              </h2>
+              <p class="json-desc">
+                Em vez de dar instruções vagas ao ChatGPT ou Claude ('faça um site bonito'),
+                nós convertemos referências estéticas reais em um arquivo JSON parametrizado.
+              </p>
+              <p class="json-desc">
+                Desta forma, a inteligência artificial entende exatamente os parâmetros de grid,
+                escalas tipográficas e paletas que você deseja recombinar, eliminando as
+                alucinações e respostas genéricas.
+              </p>
+              <ol class="json-steps" aria-label="Os 3 passos da ação">
+                <li class="json-step">
+                  <span class="json-step-num" aria-label="Ação 1">1</span>
+                  <span class="json-step-text">Tire um print da referência.</span>
+                </li>
+                <li class="json-step">
+                  <span class="json-step-num" aria-label="Ação 2">2</span>
+                  <span class="json-step-text">Suba na IA de visão e peça a desconstrução técnica.</span>
+                </li>
+                <li class="json-step">
+                  <span class="json-step-num" aria-label="Ação 3">3</span>
+                  <span class="json-step-text">Cole o resultado em formato JSON no seu construtor de prompts.</span>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <div class="code-block" role="region" aria-label="Exemplo prático de Bloco JSON">
+                <pre aria-label="Template de output JSON"><span class="cp">{</span>
   <span class="ck">"workshop"</span><span class="cp">:</span> <span class="cv">"Roube como um Artista"</span><span class="cp">,</span>
   <span class="ck">"estetica"</span><span class="cp">:</span> <span class="cv">"Neo-Brutalismo Ácido"</span><span class="cp">,</span>
   <span class="ck">"grid_layout"</span><span class="cp">:</span> <span class="cv">"Split Screen 50/50"</span><span class="cp">,</span>
@@ -470,53 +419,46 @@
   contraste, sem sombras
   difusas."</span>
 <span class="cp">}</span></pre>
+              </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ================================================
-         CTA FINAL
-    ================================================ -->
-    <section id="cta" class="section section--white" aria-labelledby="cta-h2">
-      <div class="container">
-        <div class="cta-inner">
-          <span class="cta-pill">Sessão Prática de Remix Criativo</span>
-          <h2 class="cta-title" id="cta-h2">ROUBE COMO UM ARTISTA</h2>
-          <p class="cta-desc">
-            Não espere pela originalidade mística. Descubra as estruturas que dão resultado
-            e assine com seu próprio tempero criativo.
-          </p>
-          <div class="cta-actions">
-            <a href="#hero" class="btn btn-primary" aria-label="Iniciar Aprendizado — voltar ao topo">
-              Iniciar Aprendizado <span class="arrow" aria-hidden="true">→</span>
-            </a>
-            <a href="#json" class="btn btn-secondary" aria-label="Ver Bloco JSON">
-              <span class="circle" aria-hidden="true">↗</span>
-              Ver Bloco JSON
-            </a>
+      <!-- SLIDE 9: CTA FINAL -->
+      <section id="cta" class="section section--white" aria-labelledby="cta-h2">
+        <div class="container">
+          <div class="cta-inner">
+            <span class="cta-pill">Sessão Prática de Remix Criativo</span>
+            <h2 class="cta-title" id="cta-h2">ROUBE COMO UM ARTISTA</h2>
+            <p class="cta-desc">
+              Não espere pela originalidade mística. Descubra as estruturas que dão resultado
+              e assine com seu próprio tempero criativo.
+            </p>
+            <div class="cta-actions">
+              <button class="btn btn-primary" data-goto-slide="0" aria-label="Iniciar Aprendizado — voltar ao início">
+                Iniciar Aprendizado <span class="arrow" aria-hidden="true">→</span>
+              </button>
+              <button class="btn btn-secondary" data-goto-slide="9" aria-label="Ver Bloco JSON">
+                <span class="circle" aria-hidden="true">↗</span>
+                Ver Bloco JSON
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="slide-footer" role="contentinfo">
+          <div class="footer-bar" aria-hidden="true"></div>
+          <p class="footer-logo">ROUBE<span>.</span>COMO.UM.ARTISTA</p>
+          <p class="footer-copy">ROUBE COMO UM ARTISTA © 2026. PROJETADO PARA O NOSSO ECOSSISTEMA CRIATIVO.</p>
+        </div>
+      </section>
 
+    </div>
   </main>
 
-  <!-- ================================================
-       FOOTER
-  ================================================ -->
-  <footer role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-bar" aria-hidden="true"></div>
-      <p class="footer-logo">ROUBE<span>.</span>COMO.UM.ARTISTA</p>
-      <p class="footer-copy">
-        ROUBE COMO UM ARTISTA © 2026. PROJETADO PARA O NOSSO ECOSSISTEMA CRIATIVO.
-      </p>
-    </div>
-  </footer>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/masonry.js"></script>
+  <script src="js/shape-grid.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
