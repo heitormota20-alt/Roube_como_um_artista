@@ -619,7 +619,32 @@ a { color: inherit; }
 /* ==========================================
    REFERÊNCIAS
 ========================================== */
-.ref-table { display: flex; flex-direction: column; gap: var(--sp-md); margin-top: var(--sp-xl); }
+#referencias {
+  padding: 0 !important;
+  display: block !important;
+}
+
+.ref-split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 100vh;
+}
+
+.ref-split__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-xl) clamp(40px, 6vw, 100px);
+  overflow-y: auto;
+}
+
+.ref-split__img {
+  background: url('../Public/Dobra_07.png') center center / contain no-repeat;
+  background-color: var(--off-white);
+}
+
+.ref-table { display: flex; flex-direction: column; gap: var(--sp-md); margin-top: 0; }
 .ref-row {
   background: var(--white);
   border: 1px solid var(--border);
@@ -989,10 +1014,20 @@ footer {
 /* ==========================================
    SLIDE PERGUNTA — SPLIT LAYOUT COM VÍDEO
 ========================================== */
-#pergunta {
+#pergunta,
+#esqueleto-capa {
   background: #efefed;
   padding: 0;
   display: block !important;
+}
+
+#esqueleto-capa .pergunta-split {
+  grid-template-columns: 55fr 45fr;
+}
+
+.esqueleto-side {
+  background: url('../Public/Dobra_07.png') center center / contain no-repeat;
+  background-color: #efefed;
 }
 
 .pergunta-split {
