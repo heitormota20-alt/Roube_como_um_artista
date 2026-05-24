@@ -1,0 +1,233 @@
+DESIGN SYSTEM: LANDING PAGE CONTEMPORÂNEA
+
+Foco de Usabilidade: Uso interno para colaboradores, desenvolvedores e designers.
+Este documento serve como única fonte de verdade (Single Source of Truth) para garantir consistência visual e agilidade no desenvolvimento de novas páginas.
+
+1. DIRETRIZES ESTÉTICAS (AESTHETICS & TOKENS)
+
+Esta interface adota uma estética híbrida entre o Moderno Minimalista e o Neo-Brutalismo Sofisticado, caracterizada pelo alto contraste, grids limpos, tipografia marcante, uso estratégico de formas orgânicas de fundo (gradients orbs) e faixas divisórias escuras que organizam o fluxo visual.
+
+Espaçamento (Spacing Tokens)
+
+Utilizar escala com base em múltiplos de 8px para manter consistência e ritmo vertical:
+
+xs (Extra Small): 4px / 0.25rem (espaço entre ícone e texto)
+
+sm (Small): 8px / 0.5rem (padding de badges e pequenos elementos)
+
+md (Medium): 16px / 1rem (espaço interno de componentes menores, gap de lista)
+
+lg (Large): 24px / 1.5rem (padding interno de cards)
+
+xl (Extra Large): 32px / 2rem (espaço entre blocos informativos dentro de uma seção)
+
+xxl (Section Gap): 80px a 120px (margem vertical externa entre seções completas)
+
+Arredondamento (Border Radius)
+
+Borda Total (Pill/Badge/Buttons): 9999px para botões primários, tags e pílulas de categorias.
+
+Borda Média (Cards/Containers): 16px ou 24px (aplicada em cards de projetos e seções flutuantes).
+
+Borda Suave (Formulários): 12px para caixas de seleção, inputs e botões secundários utilitários.
+
+Sombras (Shadows) e Profundidade
+
+O sistema prioriza superfícies planas (flat surfaces) com divisões nítidas por cores e bordas discretas, usando sombras apenas para destacar elementos flutuantes ou em estado de pairar (hover).
+
+Sombra Suave (Hover Cards): 0px 10px 30px rgba(0, 0, 0, 0.05) (uma sombra difusa, muito sutil, que cria profundidade sem poluir).
+
+Sem Sombra (Padrão): O padrão é o uso de bordas de 1px solid #E5E7EB para delimitar zonas na seção clara.
+
+2. PALETA DE CORES (COLOR SYSTEM)
+
+As cores foram mapeadas diretamente da imagem e estruturadas em variáveis utilitárias para garantir contraste legível e acessibilidade (padrão WCAG).
+
+ █ #FF4C29  ■ Laranja Primário (CTA, Destaques Fortes, Rodapé)
+ █ #8B5CF6  ■ Roxo Accent (Gradients, Textos Secundários Selecionados)
+ █ #0E0F11  ■ Preto Profundo (Seção de Tickers, Textos Principais)
+ █ #F8F9FA  ■ Cinza Off-White (Fundo de Seções Secundárias, Inputs, Badges)
+ █ #FFFFFF  ■ Branco Puro (Fundo Principal, Cards, Contraste de Texto Escuro)
+
+
+Paleta Principal (Primary)
+
+Coral Orange (#FF4C29): Cor de maior energia e conversão. Usada exclusivamente para botões de CTA primários, links importantes de ação, barras de rodapé institucionais e setas indicativas de navegação.
+
+Deep Charcoal (#0E0F11): Usado em blocos escuros de quebra de ritmo (como o ticker horizontal preto "Logo + Banner + UI") e como cor principal dos textos em fundo claro para garantir excelente leitura.
+
+Paleta Secundária & Destaque (Accent Colors)
+
+Vibrant Purple (#8B5CF6): Usada para criar pontos de interesse visual e marcar palavras-chave específicas em títulos de seções (ex: o fundo estilo "marca-texto" da palavra "Stick").
+
+Magenta/Purple Aura Gradient (linear-gradient(135deg, #FF007F, #7C3AED)): O efeito de brilho ou "glow" de fundo atrás do personagem na seção Hero. Serve para projetar contraste sem carregar o design.
+
+Paleta de Suporte (Neutral & Feedback)
+
+Pure White (#FFFFFF): Base do layout para dar respiro (espaço em branco).
+
+Off-White (#F8F9FA ou #F3F4F6): Usada como fundo de seções secundárias para quebrar o branco absoluto (como a seção dos logotipos de softwares e o container de categorias dos cards).
+
+Muted Gray (#6B7280): Para textos de apoio, descrições secundárias e bordas sutis.
+
+3. TIPOGRAFIA (TYPOGRAPHY)
+
+A tipografia é baseada em uma família Sans-Serif de alta legibilidade, com excelente comportamento em telas de alta densidade e apelo de design corporativo criativo.
+
+Fontes Sugeridas (Web Safe / Google Fonts)
+
+Títulos e Destaques (H1, H2, H3): Plus Jakarta Sans ou Sora (fontes geométricas, com excelente peso em bold e visual extremamente moderno).
+
+Texto Corrido (Body) e UI (Botões, Inputs): Inter ou Plus Jakarta Sans (altamente legíveis em tamanhos pequenos e médios).
+
+Hierarquia Visual (Typography Scale)
+
+Token
+
+Elemento
+
+Tamanho (px)
+
+Line-Height
+
+Peso (Weight)
+
+Aplicação Prática
+
+font-hero
+
+H1
+
+48px - 64px
+
+1.1
+
+Bold (700)
+
+Frase de impacto principal da dobra superior (Hero).
+
+font-title
+
+H2
+
+32px - 36px
+
+1.2
+
+Bold (700)
+
+Título das grandes seções (ex: "Projects Showcase").
+
+font-subtitle
+
+H3 / Card Title
+
+20px - 24px
+
+1.3
+
+Semi-Bold (600)
+
+Títulos de projetos nos cards e chamadas menores.
+
+font-body
+
+Parágrafo
+
+15px - 16px
+
+1.6
+
+Regular (400)
+
+Textos explicativos e descrições dos cases.
+
+font-button
+
+Botão
+
+14px
+
+1.0
+
+Semi-Bold (600)
+
+Texto de ações dentro de botões e links de ação.
+
+font-badge
+
+Tag / Categoria
+
+12px
+
+1.0
+
+Medium (500)
+
+Tags de categorias de tecnologias e ferramentas.
+
+4. COMPONENTES PADRONIZADOS (UI COMPONENTS)
+
+Aqui estão definidos as regras de construção visual dos componentes essenciais que os desenvolvedores internos criarão na Landing Page.
+
+A. Botões (Buttons)
+
+Botão Primário (Action Link CTA)
+
+Visual: Pílula totalmente arredondada (border-radius: 9999px). Fundo sólido no Coral Orange (#FF4C29) com texto em Branco (#FFFFFF).
+
+Comportamento de Ícone: Deve conter uma seta para a direita (→) ou seta inclinada para cima/direita (↗) que se desloca suavemente 4px para o lado no estado de Hover.
+
+Padding: 12px 24px (vertical / horizontal).
+
+Efeito Hover: Redução sutil de opacidade para 0.9 ou escurecimento para um tom de coral fechado.
+
+Botão Secundário / Link Discreto
+
+Visual: Sem fundo preenchido. Texto em Preto Profundo (#0E0F11) sublinhado ou acompanhado de um ícone indicador em formato de círculo contendo a seta em laranja.
+
+B. Cards de Projetos (Case Cards)
+
+Os cards estruturam o portfólio de soluções de maneira visualmente atraente.
+
+Estrutura de Cantos: Arredondamento de 16px (border-radius).
+
+Fundo da Imagem: Fundo cinza claro (#F3F4F6) ou com gradiente em tons pastel/cinza para destacar o mockup ou a peça centralizada.
+
+Imagem do Card: Centralizada com recuo interno (padding de 32px dentro do card) para não tocar as bordas, simulando uma exposição elegante de produto.
+
+Informações Inferiores (Meta-dados):
+
+Um botão indicador flutuante com seta circular no canto inferior esquerdo da imagem para indicar clique.
+
+Título: Fonte H3, Bold, cor #0E0F11 localizado logo abaixo da imagem.
+
+Badges de categoria: Alinhados horizontalmente abaixo do título.
+
+Exemplo de Tags de Categoria (Badges)
+
+Estilo: Cantos arredondados (border-radius: 9999px). Fundo cinza suave (#F8F9FA), texto em cinza escuro de apoio (#6B7280). Sem bordas ou com bordas finas de 1px em #E5E7EB.
+
+Padding: 6px 12px (vertical / horizontal).
+
+C. Inputs de Formulário (Form Fields)
+
+Para coletar dados de funcionários ou clientes de forma limpa.
+
+Estilo Visual: Caixa com bordas levemente arredondadas (border-radius: 12px).
+
+Cores: Fundo branco ou Off-White (#F8F9FA) com uma borda cinza clara de 1px (#E5E7EB).
+
+Estado Ativo (Focus): Borda assume a cor Coral Orange (#FF4C29) ou Roxo (#8B5CF6) com um leve anel de foco sem sombras duras.
+
+Placeholder: Texto cinza bem leve (#9CA3AF) com instruções claras.
+
+D. Tickers Horizontais (Infinite Text Slider)
+
+Utilização: Excelente para separar seções criando dinamismo e movimento à página.
+
+Visual: Faixa horizontal com fundo Preto Profundo (#0E0F11) e texto em Branco Puro (#FFFFFF).
+
+Texto: Palavras-chave separadas por um elemento icônico contrastante (ex: uma estrela de 4 pontas ou sinal de mais na cor Coral #FF4C29).
+
+Animação: Loop infinito de rolagem lateral (marquee) por CSS de forma suave.

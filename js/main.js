@@ -13,6 +13,7 @@ const pergunta_video   = document.querySelector('#pergunta .pergunta-bg-video');
 const esqueleto_video  = document.querySelector('#esqueleto-capa .esqueleto-video');
 const maos_massa_video = document.querySelector('#maos-massa .maos-massa-video');
 const json_video       = document.querySelector('#json .json-video');
+const orquestra_video  = document.querySelector('#orquestra .orquestra-video');
 
 const slideVideos = [
   { index: 1,  el: manifesto_video,  noLoop: true },
@@ -20,6 +21,7 @@ const slideVideos = [
   { index: 6,  el: esqueleto_video,  noLoop: true },
   { index: 9,  el: maos_massa_video, noLoop: true },
   { index: 10, el: json_video },
+  { index: 11, el: orquestra_video },
 ];
 
 function handleSlideVideos(index) {
@@ -127,6 +129,21 @@ if (shapeCanvas) {
 const metodoCanvas = document.querySelector('.metodo-shape-grid');
 if (metodoCanvas) {
   new ShapeGrid(metodoCanvas, {
+    direction:        'diagonal',
+    speed:            0.4,
+    squareSize:       52,
+    borderColor:      '#1c1c1e',
+    hoverFillColor:   '#FF4C29',
+    hoverTrailAmount: 6,
+  });
+}
+
+/* ==========================================
+   SHAPE GRID — Slide 13 (exercicio)
+========================================== */
+const exercicioCanvas = document.querySelector('.exercicio-shape-grid');
+if (exercicioCanvas) {
+  new ShapeGrid(exercicioCanvas, {
     direction:        'diagonal',
     speed:            0.4,
     squareSize:       52,

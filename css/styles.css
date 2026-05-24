@@ -1598,13 +1598,43 @@ main {
 /* ==========================================
    SLIDE 12 — ORQUESTRA DA INTELIGÊNCIA
 ========================================== */
+
+/* Split grid: conteúdo à esquerda, vídeo à direita */
+.orquestra-split {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--sp-xxl);
+  align-items: center;
+  min-height: 65vh;
+}
+
+.orquestra-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.orquestra-video-col {
+  overflow: hidden;
+  border-radius: var(--r-card);
+}
+
+.orquestra-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .orquestra-titulo {
   font-family: var(--f-head);
-  font-size: clamp(40px, 6.5vw, 88px);
+  font-size: clamp(32px, 4.2vw, 58px);
   font-weight: 700;
   line-height: 1.05;
   color: var(--white);
   margin-bottom: var(--sp-sm);
+  white-space: nowrap; /* garante que "A Orquestra da" nunca quebra no meio */
 }
 .orquestra-titulo span { color: var(--coral); }
 
@@ -1613,15 +1643,13 @@ main {
   line-height: 1.7;
   color: rgba(255,255,255,.65);
   margin-bottom: var(--sp-xl);
-  max-width: 520px;
 }
 
-/* Grid 2×2 abaixo do título, ancorado à esquerda */
+/* Grid 2×2 abaixo do título */
 .orquestra-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--sp-md);
-  max-width: 720px;
 }
 
 .ia-card {
@@ -1726,4 +1754,108 @@ main {
 
 .maos-massa-titulo span {
   color: var(--coral);
+}
+
+/* ==========================================
+   SLIDE 13 — EXERCÍCIO
+========================================== */
+#exercicio {
+  overflow: hidden !important;
+  position: relative;
+}
+
+.exercicio-shape-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+#exercicio > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.exercicio-titulo-wrap {
+  text-align: center;
+}
+
+/* Linha 1 — fonte padrão do PPT */
+.exercicio-intro {
+  font-family: var(--f-head);
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 0.06em;
+}
+
+/* Frase abaixo — texto corrido padrão dos slides */
+.exercicio-frase {
+  font-family: var(--f-head);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255,255,255,.62);
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+  margin-top: clamp(24px, 4vh, 56px);
+}
+.exercicio-frase + .exercicio-frase {
+  margin-top: var(--sp-md);
+}
+.exercicio-frase strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Linha 2 — wrapper inline para posicionar a tarja */
+.exercicio-palavra-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* A palavra LADRÕES: condensada bold, riscada */
+.exercicio-ladrao {
+  display: block;
+  font-family: 'Barlow Condensed', var(--f-head), sans-serif;
+  font-size: clamp(60px, 10vw, 144px);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-decoration: line-through;
+  text-decoration-color: var(--white);
+  text-decoration-thickness: from-font;
+}
+
+/* Tarja laranja — só sobre a palavra, fina */
+.exercicio-tarja {
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  right: -24px;
+  transform: translateY(-50%);
+  background: var(--coral);
+  padding: 4px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* "ARTISTAS" — fonte padrão do PPT, não condensada */
+.exercicio-tarja-texto {
+  font-family: var(--f-head);
+  font-size: clamp(18px, 2.6vw, 38px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  line-height: 1;
 }
