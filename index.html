@@ -45,7 +45,7 @@
 
       <!-- SLIDE 2: MANIFESTO -->
       <section id="manifesto" class="section section--light" aria-labelledby="manifesto-h2">
-        <video class="manifesto-bg-video" muted playsinline aria-hidden="true">
+        <video class="manifesto-bg-video" autoplay loop muted playsinline aria-hidden="true">
           <source src="Public/Dobra_02.mp4?v=2" type="video/mp4">
         </video>
         <div class="container manifesto-layout">
@@ -201,74 +201,139 @@
       </section>
 
       <!-- SLIDE: CAPA ESQUELETO -->
-      <section id="esqueleto-capa" class="section" aria-labelledby="esqueleto-h2">
-        <div class="pergunta-split">
-          <div class="pergunta-split__content">
-            <h2 class="pergunta-titulo" id="esqueleto-h2">
-              Mas onde buscar<br><span style="color:var(--coral)">esse tal de esqueleto?</span>
-
-            </h2>
-          </div>
-          <div class="esqueleto-side"></div>
+      <section id="esqueleto-capa" aria-labelledby="esqueleto-h2">
+        <video class="esqueleto-video" muted playsinline preload="none" aria-hidden="true">
+          <source src="Public/Slide_07.mp4" type="video/mp4">
+        </video>
+        <div class="esqueleto-inner">
+          <h2 class="pergunta-titulo" id="esqueleto-h2">
+            Mas onde buscar <br><span style="color:var(--coral)">esse tal de esqueleto?</span>
+          </h2>
         </div>
       </section>
 
       <!-- SLIDE 8: REFERÊNCIAS -->
-      <section id="referencias" class="section section--light" aria-labelledby="ref-h2">
+      <section id="referencias" class="section section--dark" aria-labelledby="ref-h2">
         <div class="container">
           <span class="sec-label">Bibliotecas de Curadoria</span>
-          <h2 id="ref-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
-            Onde buscar seu repertório.
+          <h2 id="ref-h2" class="ref-heading">
+            Onde buscar seu repertório?
           </h2>
-          <div class="ref-table" role="region" aria-label="Tabela comparativa de fontes">
-            <div class="ref-row">
-              <div class="ref-vert">
-                <p class="ref-vert-label">Vertical</p>
-                <h3>Design &amp; Layout</h3>
+          <div class="ref-cards-grid" role="list" aria-label="Comparativo de fontes por vertical">
+
+            <!-- Card: Design & Layout -->
+            <article class="ref-card" role="listitem">
+              <div class="ref-card__thumb ref-card__thumb--design" aria-hidden="true">
+                <svg class="ref-card__thumb-deco" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <rect x="8" y="8" width="20" height="20" rx="3" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+                  <rect x="36" y="8" width="20" height="20" rx="3" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+                  <rect x="8" y="36" width="48" height="20" rx="3" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+                  <circle cx="18" cy="18" r="4" fill="rgba(255,76,41,.35)"/>
+                </svg>
               </div>
-              <div class="ref-cols">
-                <div class="ref-col ref-col--rich">
-                  <p class="ref-col-label">Fontes Ricas</p>
-                  <p>Are.na, Behance Premium, Dribbble Nichado, Editorias e Livros Físicos.</p>
+              <div class="ref-card__body">
+                <div class="ref-card__title-row">
+                  <span class="ref-card__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                  </span>
+                  <h3 class="ref-card__title">Design &amp; Layout</h3>
                 </div>
-                <div class="ref-col ref-col--poor">
-                  <p class="ref-col-label">Fontes Pobres</p>
-                  <p>Scroll casual sem foco no Pinterest, feeds inflados do Instagram.</p>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--rich">Fontes Ricas</p>
+                  <ul class="ref-card__list ref-card__list--rich">
+                    <li>Are.na &amp; Behance Premium</li>
+                    <li>Dribbble Nichado</li>
+                    <li>Editoras &amp; Livros Físicos</li>
+                  </ul>
                 </div>
-              </div>
-            </div>
-            <div class="ref-row">
-              <div class="ref-vert">
-                <p class="ref-vert-label">Vertical</p>
-                <h3>Estratégia de Texto (Copy)</h3>
-              </div>
-              <div class="ref-cols">
-                <div class="ref-col ref-col--rich">
-                  <p class="ref-col-label">Fontes Ricas</p>
-                  <p>Newsletters de autores respeitados, Ensaios acadêmicos, Jornalismo narrativo.</p>
-                </div>
-                <div class="ref-col ref-col--poor">
-                  <p class="ref-col-label">Fontes Pobres</p>
-                  <p>Feed inundado de posts reciclados por algoritmos no LinkedIn.</p>
-                </div>
-              </div>
-            </div>
-            <div class="ref-row">
-              <div class="ref-vert">
-                <p class="ref-vert-label">Vertical</p>
-                <h3>Estratégias de Tráfego</h3>
-              </div>
-              <div class="ref-cols">
-                <div class="ref-col ref-col--rich">
-                  <p class="ref-col-label">Fontes Ricas</p>
-                  <p>Biblioteca de Anúncios da Meta, Repositórios de cases e prêmios de Ads.</p>
-                </div>
-                <div class="ref-col ref-col--poor">
-                  <p class="ref-col-label">Fontes Pobres</p>
-                  <p>Gurus rápidos vendendo hacks prontos e fórmulas mágicas no TikTok.</p>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--poor">Fontes Pobres</p>
+                  <ul class="ref-card__list ref-card__list--poor">
+                    <li>Scroll casual no Pinterest</li>
+                    <li>Feeds inflados do Instagram</li>
+                  </ul>
                 </div>
               </div>
-            </div>
+            </article>
+
+            <!-- Card: Copywriting -->
+            <article class="ref-card" role="listitem">
+              <div class="ref-card__thumb ref-card__thumb--copy" aria-hidden="true">
+                <svg class="ref-card__thumb-deco" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M12 16 Q32 10 52 16" stroke="rgba(255,255,255,.12)" stroke-width="1.5" fill="none"/>
+                  <path d="M12 24 Q32 18 52 24" stroke="rgba(255,255,255,.12)" stroke-width="1.5" fill="none"/>
+                  <path d="M12 32 Q32 26 52 32" stroke="rgba(255,255,255,.12)" stroke-width="1.5" fill="none"/>
+                  <path d="M12 40 Q28 34 40 40" stroke="rgba(255,255,255,.12)" stroke-width="1.5" fill="none"/>
+                  <path d="M44 12 L52 20 L28 44 L20 44 L20 36 Z" stroke="rgba(255,76,41,.45)" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <div class="ref-card__body">
+                <div class="ref-card__title-row">
+                  <span class="ref-card__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/>
+                    </svg>
+                  </span>
+                  <h3 class="ref-card__title">Copywriting</h3>
+                </div>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--rich">Fontes Ricas</p>
+                  <ul class="ref-card__list ref-card__list--rich">
+                    <li>Newsletters de autores renomados</li>
+                    <li>Ensaios acadêmicos &amp; Literatura</li>
+                    <li>Jornalismo narrativo</li>
+                  </ul>
+                </div>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--poor">Fontes Pobres</p>
+                  <ul class="ref-card__list ref-card__list--poor">
+                    <li>Posts reciclados do LinkedIn</li>
+                    <li>Algoritmos de conteúdo raso</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card: Tráfego Pago -->
+            <article class="ref-card" role="listitem">
+              <div class="ref-card__thumb ref-card__thumb--traffic" aria-hidden="true">
+                <svg class="ref-card__thumb-deco" width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <polyline points="8,44 20,30 32,36 44,20 56,12" stroke="rgba(255,76,41,.45)" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                  <rect x="8" y="46" width="8" height="10" rx="1" fill="rgba(255,255,255,.08)"/>
+                  <rect x="20" y="38" width="8" height="18" rx="1" fill="rgba(255,255,255,.08)"/>
+                  <rect x="32" y="42" width="8" height="14" rx="1" fill="rgba(255,255,255,.08)"/>
+                  <rect x="44" y="28" width="8" height="28" rx="1" fill="rgba(255,255,255,.08)"/>
+                </svg>
+              </div>
+              <div class="ref-card__body">
+                <div class="ref-card__title-row">
+                  <span class="ref-card__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                  </span>
+                  <h3 class="ref-card__title">Tráfego Pago</h3>
+                </div>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--rich">Fontes Ricas</p>
+                  <ul class="ref-card__list ref-card__list--rich">
+                    <li>Biblioteca de Anúncios da Meta</li>
+                    <li>Repositórios de cases e prêmios</li>
+                    <li>Análise de Ads Globais</li>
+                  </ul>
+                </div>
+                <div class="ref-card__section">
+                  <p class="ref-card__section-label ref-card__section-label--poor">Fontes Pobres</p>
+                  <ul class="ref-card__list ref-card__list--poor">
+                    <li>Gurus de hacks rápidos no TikTok</li>
+                    <li>"Fórmulas mágicas" de lançamentos</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
@@ -337,34 +402,19 @@
         </div>
       </section>
 
-      <!-- SLIDE 7: FERRAMENTAS -->
-      <section id="ferramentas" class="section section--light" aria-labelledby="ferramentas-h2">
-        <div class="container">
-          <span class="sec-label">Nosso Arsenal</span>
-          <h2 id="ferramentas-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;margin-bottom:var(--sp-xl);">
-            O ecossistema digital do caçador.
+      <!-- SLIDE 10: MÃOS NA MASSA -->
+      <section id="maos-massa" class="section" aria-labelledby="maos-massa-h2">
+        <video class="maos-massa-video" muted playsinline preload="none" aria-hidden="true">
+          <source src="Public/Slide_10.mp4" type="video/mp4">
+        </video>
+        <div class="maos-massa-inner">
+          <h2 class="maos-massa-titulo" id="maos-massa-h2">
+            Vamos<br>Coloca a<br><span>Mão na massa?</span>
           </h2>
-          <div class="tools-grid">
-            <article class="tool-card">
-              <p class="tool-num">Ferramenta 01</p>
-              <h3>Meta Ads Library</h3>
-              <p>A maior ferramenta para compreender o que está de fato convertendo no ar no momento. Analise o que perdura ativo.</p>
-            </article>
-            <article class="tool-card">
-              <p class="tool-num">Ferramenta 02</p>
-              <h3>Pinterest Mapeado</h3>
-              <p>Excelente para capturar e categorizar moodboards por padrões específicos (ex: paletas ou assimetrias tipográficas).</p>
-            </article>
-            <article class="tool-card">
-              <p class="tool-num">Ferramenta 03</p>
-              <h3>Behance, Mobbin &amp; Are.na</h3>
-              <p>Onde o design de vanguarda mundial se consolida. Analise portfólios, layouts assíncronos e diagramações premiadas.</p>
-            </article>
-          </div>
         </div>
       </section>
 
-      <!-- SLIDE 8: JSON -->
+      <!-- SLIDE 12: JSON -->
       <section id="json" class="section section--dark" aria-labelledby="json-h2">
         <div class="container">
           <div class="json-grid">
@@ -420,7 +470,7 @@
         </div>
       </section>
 
-      <!-- SLIDE 9: CTA FINAL -->
+      <!-- SLIDE 13: CTA FINAL -->
       <section id="cta" class="section section--white" aria-labelledby="cta-h2">
         <div class="container">
           <div class="cta-inner">

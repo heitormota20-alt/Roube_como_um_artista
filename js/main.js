@@ -8,23 +8,25 @@ let current         = 0;
 let locked          = false;
 
 /* Vídeos controlados por slide */
-const manifesto_video = document.querySelector('#manifesto .manifesto-bg-video');
-const pergunta_video  = document.querySelector('#pergunta .pergunta-bg-video');
+const pergunta_video   = document.querySelector('#pergunta .pergunta-bg-video');
+const esqueleto_video  = document.querySelector('#esqueleto-capa .esqueleto-video');
+const maos_massa_video = document.querySelector('#maos-massa .maos-massa-video');
 
 const slideVideos = [
-  { index: 1, el: manifesto_video },
-  { index: 2, el: pergunta_video },
+  { index: 2,  el: pergunta_video },
+  { index: 6,  el: esqueleto_video,  noLoop: true },
+  { index: 9,  el: maos_massa_video, noLoop: true },
 ];
 
 function handleSlideVideos(index) {
-  slideVideos.forEach(({ index: targetIndex, el }) => {
+  slideVideos.forEach(({ index: targetIndex, el, noLoop }) => {
     if (!el) return;
     if (index === targetIndex) {
       el.currentTime = 0;
       el.play();
     } else {
       el.pause();
-      el.currentTime = 0;
+      if (!noLoop) el.currentTime = 0;
     }
   });
 }
