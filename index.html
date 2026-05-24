@@ -45,7 +45,7 @@
 
       <!-- SLIDE 2: MANIFESTO -->
       <section id="manifesto" class="section section--light" aria-labelledby="manifesto-h2">
-        <video class="manifesto-bg-video" autoplay loop muted playsinline aria-hidden="true">
+        <video class="manifesto-bg-video" muted playsinline preload="none" aria-hidden="true">
           <source src="Public/Dobra_02.mp4?v=2" type="video/mp4">
         </video>
         <div class="container manifesto-layout">
@@ -340,10 +340,11 @@
 
       <!-- SLIDE 6: MÉTODO -->
       <section id="metodo" class="section section--dark" aria-labelledby="metodo-h2">
+        <canvas class="metodo-shape-grid" aria-hidden="true"></canvas>
         <div class="container">
           <span class="sec-label">Fluxo Prático</span>
-          <h2 id="metodo-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;color:var(--white);">
-            O fluxo sistemático do Remix.
+          <h2 id="metodo-h2" style="font-family:var(--f-head);font-size:clamp(40px,5.5vw,72px);font-weight:700;line-height:1.05;color:var(--white);">
+            O fluxo sistemático do ladrão.
           </h2>
           <div class="steps-grid" role="list" aria-label="Os 4 passos do método">
             <article class="step-card" role="listitem">
@@ -420,7 +421,7 @@
           <div class="json-grid">
             <div>
               <span class="sec-label">O Hack do Futuro</span>
-              <h2 class="json-title" id="json-h2" style="font-family:var(--f-head);font-size:clamp(26px,3.5vw,36px);font-weight:700;line-height:1.2;">
+              <h2 class="json-title" id="json-h2">
                 Mapeando Estilos em JSON para IA.
               </h2>
               <p class="json-desc">
@@ -443,29 +444,61 @@
                 </li>
                 <li class="json-step">
                   <span class="json-step-num" aria-label="Ação 3">3</span>
-                  <span class="json-step-text">Cole o resultado em formato JSON no seu construtor de prompts.</span>
+                  <span class="json-step-text">Cole o resultado em formato de JSON<br>no seu construtor de imagens.</span>
                 </li>
               </ol>
             </div>
-            <div>
-              <div class="code-block" role="region" aria-label="Exemplo prático de Bloco JSON">
-                <pre aria-label="Template de output JSON"><span class="cp">{</span>
-  <span class="ck">"workshop"</span><span class="cp">:</span> <span class="cv">"Roube como um Artista"</span><span class="cp">,</span>
-  <span class="ck">"estetica"</span><span class="cp">:</span> <span class="cv">"Neo-Brutalismo Ácido"</span><span class="cp">,</span>
-  <span class="ck">"grid_layout"</span><span class="cp">:</span> <span class="cv">"Split Screen 50/50"</span><span class="cp">,</span>
-  <span class="ck">"paleta_referencia"</span><span class="cp">:</span> <span class="ca">[
-    "#d4ff00"</span><span class="cp">,</span>
-    <span class="ca">"#080809"</span><span class="cp">,</span>
-    <span class="ca">"#ffffff"
-  ]</span><span class="cp">,</span>
-  <span class="ck">"tipografia"</span><span class="cp">:</span> <span class="cv">"Syne &amp; Space Grotesk"</span><span class="cp">,</span>
-  <span class="ck">"diretrizes"</span><span class="cp">:</span> <span class="cv">"Evitar adornos
-  desnecessários, alto
-  contraste, sem sombras
-  difusas."</span>
-<span class="cp">}</span></pre>
-              </div>
+            <div class="json-code-col">
+              <video class="json-video" muted playsinline loop preload="none" aria-hidden="true">
+                <source src="Public/Slide_11.mp4" type="video/mp4">
+              </video>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: ORQUESTRA DA INTELIGÊNCIA -->
+      <section id="orquestra" class="section section--dark" aria-labelledby="orquestra-h2">
+        <div class="container">
+
+          <span class="sec-label">Workflow de IA</span>
+          <h2 class="orquestra-titulo" id="orquestra-h2">
+            A Orquestra da<br><span>Inteligência</span>
+          </h2>
+          <p class="orquestra-subtitulo">
+            A maior vantagem competitiva do seu workflow não é usar uma IA, mas saber mesclá-las.
+          </p>
+
+          <div class="orquestra-cards">
+
+            <article class="ia-card">
+              <div class="ia-card__header">
+                <h3 class="ia-card__title">Claude <span>Raciocínio &amp; Lógica</span></h3>
+              </div>
+              <p class="ia-card__foco"><strong>Foco Estratégico:</strong> Engenharia de prompt reversa, estruturação de dados e documentações complexas.</p>
+            </article>
+
+            <article class="ia-card">
+              <div class="ia-card__header">
+                <h3 class="ia-card__title">ChatGPT <span>Criatividade &amp; Fluxo</span></h3>
+              </div>
+              <p class="ia-card__foco"><strong>Foco Estratégico:</strong> Brainstorms de alta velocidade, iteração ágil e flexibilidade multimodal.</p>
+            </article>
+
+            <article class="ia-card">
+              <div class="ia-card__header">
+                <h3 class="ia-card__title">Perplexity <span>Pesquisa &amp; Validação</span></h3>
+              </div>
+              <p class="ia-card__foco"><strong>Foco Estratégico:</strong> Curadoria de dados em tempo real, auditoria e ancoragem factual.</p>
+            </article>
+
+            <article class="ia-card">
+              <div class="ia-card__header">
+                <h3 class="ia-card__title">Direção de Arte Visual <span>Estética &amp; Produção</span></h3>
+              </div>
+              <p class="ia-card__foco"><strong>Foco Estratégico:</strong> Tradução de conceitos abstratos em ativos visuais de alto impacto (Midjourney / DALL-E / Firefly).</p>
+            </article>
+
           </div>
         </div>
       </section>

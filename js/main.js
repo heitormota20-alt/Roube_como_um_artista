@@ -8,14 +8,18 @@ let current         = 0;
 let locked          = false;
 
 /* Vídeos controlados por slide */
+const manifesto_video  = document.querySelector('#manifesto .manifesto-bg-video');
 const pergunta_video   = document.querySelector('#pergunta .pergunta-bg-video');
 const esqueleto_video  = document.querySelector('#esqueleto-capa .esqueleto-video');
 const maos_massa_video = document.querySelector('#maos-massa .maos-massa-video');
+const json_video       = document.querySelector('#json .json-video');
 
 const slideVideos = [
+  { index: 1,  el: manifesto_video,  noLoop: true },
   { index: 2,  el: pergunta_video },
   { index: 6,  el: esqueleto_video,  noLoop: true },
   { index: 9,  el: maos_massa_video, noLoop: true },
+  { index: 10, el: json_video },
 ];
 
 function handleSlideVideos(index) {
@@ -57,6 +61,7 @@ function goTo(index) {
     `${String(current + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
   handleSlideVideos(current);
   handleSlideMosaics(current);
+  handleJsonTypewriter(current);
   setTimeout(() => { locked = false; }, 820);
 }
 
@@ -117,6 +122,21 @@ if (shapeCanvas) {
 }
 
 /* ==========================================
+   SHAPE GRID — Slide 09 (metodo)
+========================================== */
+const metodoCanvas = document.querySelector('.metodo-shape-grid');
+if (metodoCanvas) {
+  new ShapeGrid(metodoCanvas, {
+    direction:        'diagonal',
+    speed:            0.4,
+    squareSize:       52,
+    borderColor:      '#1c1c1e',
+    hoverFillColor:   '#FF4C29',
+    hoverTrailAmount: 6,
+  });
+}
+
+/* ==========================================
    SPOTLIGHT HOVER (tese cards)
 ========================================== */
 document.querySelectorAll('.tese-card').forEach((card) => {
@@ -144,4 +164,93 @@ function handleSlideMosaics(index) {
 const mosaicEl = document.querySelector('#pilares .pilares-mosaic');
 if (mosaicEl && typeof gsap !== 'undefined') {
   pilaresMosaic = new MosaicGrid(mosaicEl);
+}
+
+/* ==========================================
+   TYPEWRITER — Slide 11 (json), índice 10
+========================================== */
+const jsonTypewriter = (() => {
+  const preEl = document.getElementById('json-pre');
+  if (!preEl) return { start() {}, reset() {} };
+
+  const sourceHTML = preEl.innerHTML;
+  let timer        = null;
+  let running      = false;
+
+  /* Divide o HTML em tokens: tags/entities (saída imediata) ou char a char */
+  function tokenize(html) {
+    const tokens = [];
+    let i = 0;
+    while (i < html.length) {
+      /* Tag HTML */
+      if (html[i] === '<') {
+        const end = html.indexOf('>', i);
+        if (end !== -1) {
+          tokens.push({ instant: true, s: html.slice(i, end + 1) });
+          i = end + 1;
+          continue;
+        }
+      }
+      /* Entidade HTML (&amp; &lt; etc.) */
+      if (html[i] === '&') {
+        const end = html.indexOf(';', i);
+        if (end !== -1 && end - i <= 9) {
+          tokens.push({ instant: false, s: html.slice(i, end + 1) });
+          i = end + 1;
+          continue;
+        }
+      }
+      tokens.push({ instant: false, s: html[i] });
+      i++;
+    }
+    return tokens;
+  }
+
+  const tokens = tokenize(sourceHTML);
+
+  function start() {
+    if (running) return;
+    running = true;
+
+    preEl.innerHTML =
+      '<span class="tw-content"></span>' +
+      '<span class="tw-cursor" aria-hidden="true">▋</span>';
+
+    const contentEl = preEl.querySelector('.tw-content');
+    const cursorEl  = preEl.querySelector('.tw-cursor');
+    let built = '';
+    let pi    = 0;
+
+    function step() {
+      if (pi >= tokens.length) {
+        cursorEl.classList.add('tw-cursor--done');
+        timer = setTimeout(() => cursorEl.remove(), 1000);
+        return;
+      }
+      const tok = tokens[pi++];
+      built += tok.s;
+      contentEl.innerHTML = built;
+
+      /* Tags são inseridas instantaneamente; chars com delay */
+      timer = setTimeout(step, tok.instant ? 0 : 20);
+    }
+
+    step();
+  }
+
+  function reset() {
+    clearTimeout(timer);
+    running = false;
+    preEl.innerHTML = sourceHTML;
+  }
+
+  return { start, reset };
+})();
+
+function handleJsonTypewriter(index) {
+  if (index === 10) {
+    jsonTypewriter.start();
+  } else {
+    jsonTypewriter.reset();
+  }
 }
