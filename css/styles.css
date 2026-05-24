@@ -1036,7 +1036,11 @@ a { color: inherit; }
 /* ==========================================
    CTA FINAL
 ========================================== */
-#cta { text-align: center; padding: var(--sp-xxl) 0; }
+#cta {
+  text-align: center;
+  padding: var(--sp-xxl) 0;
+  overflow: hidden;
+}
 .cta-inner { max-width: 680px; margin-inline: auto; }
 
 .cta-pill {
@@ -1050,22 +1054,37 @@ a { color: inherit; }
   letter-spacing: .12em;
   padding: 6px 16px;
   border-radius: var(--r-pill);
-  margin-bottom: var(--sp-xl);
+  margin-bottom: var(--sp-md);
 }
+
+.cta-complemento {
+  font-family: var(--f-head);
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0;
+}
+
 .cta-title {
   font-family: var(--f-head);
-  font-size: clamp(48px, 10vw, 88px);
+  font-size: 20vw;
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 0.9;
   color: var(--charcoal);
   letter-spacing: -.04em;
-  margin-bottom: var(--sp-xl);
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-block: var(--sp-md);
 }
+
 .cta-desc {
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.65;
   color: var(--muted);
-  margin-bottom: var(--sp-xxl);
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
 }
 .cta-actions {
   display: flex;
